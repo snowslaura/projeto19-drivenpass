@@ -1,8 +1,9 @@
 import { Request, Response } from "express"
-import * as authRepository from "./../repositories/authRepository.js"
+import * as authService from "./../services/authService.js"
+import { CreateUserData } from "./../services/authService.js"
 
 export async function createUser(req: Request,res: Response){
-    const {email, password} = req.body
-    await authRepository.createUser(email.password)
-    res.send(201)
+    const {email, password} : CreateUserData = req.body
+    await authService.createUser({email,password})
+    res.sendStatus(201)
 }

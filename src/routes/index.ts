@@ -1,9 +1,9 @@
 import { Router } from "express";
-import authRouter from "./authRouter";
-import credentialsRouter from "./credentialsRouter";
-import safeNotesRouter from "./safeNotesRouter";
-import cardsRouter from "./cardsRouter";
-import wifiRouter from "./wifiRouter";
+import authRouter from "./../routes/authRouter.js";
+import credentialsRouter from "./../routes/credentialsRouter.js";
+import safeNotesRouter from "./safeNotesRouter.js";
+import cardsRouter from "./cardsRouter.js";
+import wifiRouter from "./wifiRouter.js";
 
 const router = Router();
 router.use(authRouter);
