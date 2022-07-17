@@ -11,7 +11,11 @@ export async function createCredentials({userId, title, url, userName, password}
 }
 
 async function verifyUserIdAndTitle(userId:number, title:string){
-    await credentialsRepository.verifyUserIdAndTitle(userId, title)
+   const credential = await credentialsRepository.verifyUserIdAndTitle(userId, title)
+   if(credential)throw{
+    type:"conflict",
+    message:"Titulo já existente."
+   }
 }
 
 async function encryptedPassword(password:string){
