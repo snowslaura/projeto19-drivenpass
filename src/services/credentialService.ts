@@ -28,6 +28,15 @@ export async function fetchCredentials(userId:number){
     return credentials
 }
 
+export async function fetchOneCredential(userId:number,id:number){    
+    const credential = await credentialsRepository.fetchOneCredentialByUserIdAndId(userId,id)
+    if(credential.length===0)throw{
+        type:"unprocessable_entity",
+        message:"Credencial inexistente"
+    }
+    return credential
+}
+
 export async function deleteCredentials(userId:number, id:number){ 
     verifyUserIdAndId(userId,id)
     await credentialsRepository.deleteCredential(id)

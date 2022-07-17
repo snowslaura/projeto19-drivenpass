@@ -8,6 +8,13 @@ export async function createNote(req: Request, res: Response){
     res.sendStatus(201)    
 }
 
+export async function fetchOneNote(req: Request, res: Response){
+    const userId:number = res.locals.userId
+    const id:number = parseInt(req.params.id)
+    const notes = await noteService.fetchOneNote(userId,id)
+    res.status(200).send(notes)    
+}
+
 export async function fetchNotes(req: Request, res: Response){
     const userId:number = res.locals.userId
     const notes = await noteService.fetchNotes(userId)

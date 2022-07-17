@@ -76,7 +76,7 @@ model wifi{
   networkName String
   password String
 
-  @@unique([userId, title])
+  // @@unique([userId, title])
 }
 
 

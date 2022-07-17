@@ -22,6 +22,15 @@ export async function fetchNotes(userId: number){
     return notes
 }
 
+export async function fetchOneNote(userId:number,id:number){
+    const note = await notesRepository.fetchOneNote(userId,id)
+    if(note.length===0)throw{
+        type:"unprocessable_entity",
+        message:"Nota inexistente"
+    }
+    return note
+}
+
 export async function deleteNote(userId:number,id:number){
     await verifyNoteByUserIdAndId(userId,id)
     await notesRepository.deleteNote(id)

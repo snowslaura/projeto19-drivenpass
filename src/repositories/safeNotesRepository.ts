@@ -27,6 +27,15 @@ export async function fetchNotes(userId:number){
     })
 }
 
+export async function fetchOneNote(userId:number,id:number){
+    return prisma.safeNotes.findMany({
+        where:{
+            userId,
+            id
+        }
+    })
+}
+
 export async function verifyNoteByUserIdAndID(userId:number, id:number){
     return prisma.safeNotes.findFirst({
         where:{

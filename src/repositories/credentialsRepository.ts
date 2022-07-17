@@ -30,6 +30,15 @@ export async function fetchCredentialByUserId(userId:number){
     })
 }
 
+export async function fetchOneCredentialByUserIdAndId(userId:number,id:number){
+    return prisma.credentials.findMany({
+        where:{
+            userId,
+            id
+        }
+    })
+}
+
 export async function verifyTitle(userId:number,id:number) {
  return prisma.credentials.findFirst({
     where:{userId,id}
