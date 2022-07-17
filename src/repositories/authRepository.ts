@@ -13,3 +13,7 @@ export async function createUser({email,password}: CreateUserData){
         }
     })
 }
+
+export async function verifyUserByEmailForSignIn(email:string){
+    return await client.user.findUnique({where: {email}})
+}

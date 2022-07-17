@@ -31,7 +31,7 @@ model credentials{
   password String
   createdAt DateTime @default(now())
 
-  @@unique([userId, title])
+  @@unique([userId,title])
 }
 
 model safeNotes{
