@@ -60,7 +60,7 @@ model cards{
   name String
   CVV String
   password String
-  ExpirationDate DateTime
+  ExpirationDate String
   isVirtual Boolean
   type Type 
   createdAt DateTime @default(now())
