@@ -13,6 +13,18 @@ Você pode se registrar, fazer login, salvar informações de cartões, credenci
 
 ```Destaques: Arquitetura em camadas, Prisma, JWT```
 
+<h3>Database and backend deploy link</h3>
+https://projeto19-drivenpass-back.herokuapp.com
+
+# Usage </br>
+$ git clone https://github.com/snowslaura/projeto19-drivenpass
+
+$ cd projeto19-drivenpass
+
+$ npm install
+
+$ npm run dev
+
 
 
 # Rotas de autenticação:
